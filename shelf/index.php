@@ -3,16 +3,17 @@
 <head><title>shelf</title></head>
 <body>
 FILES:
-<ul>
 <?php
 foreach (glob("*") as $file) {
-    echo "<li><a href='$file'>" . $file . "</a></li><br>";
+    echo "<a href='$file'>" . $file . "</a><br>";
 }
 ?>
-</ul>
+
 UPLOAD:
 <?php
+
 if (isset($_FILES["file"]["name"])) {
+
     $name = $_FILES["file"]["name"];
     $tmp_name = $_FILES['file']['tmp_name'];
     $error = $_FILES['file']['error'];
